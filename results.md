@@ -7,8 +7,11 @@
 $$\nabla_{x_t} \log{p_t(x_t)} + \nabla_{x_t} \log \mathbb{E}_{p(x_0 \mid x_t)} \left[ e^{-\lambda E(x_0)} \right]$$
 - This term is intractable so approximate 
 $$\mathbb{E}_{p(x_0 \mid x_t)} \left[ e^{-\lambda E(x_0)} \right] \approx e^{-\lambda E(\hat{x}_0)}$$
+
 with
+
 $$\hat{x}_0 = \frac{x_t - \sqrt{1-\bar{\alpha}}\ \epsilon_\theta(x_t, y, t)}{\sqrt{\bar{\alpha}}}$$
+
 - Score becomes
 $$\nabla_{x_t} \log{p_t(x_t)} - \lambda \nabla_{x_t}E(\hat{x}_0(x_t))$$
 
